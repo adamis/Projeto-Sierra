@@ -1,0 +1,54 @@
+<div class="grid p-fluid">
+
+    <div class="field lg:col-12 md:col-12 sm:col-12" style="margin-left: 10px; margin-bottom: 30px; margin-top: 20px;">
+        Defina o Agendamento:
+    </div>
+
+    <div class="field lg:col-4 md:col-4 sm:col-12">
+        <span class="p-float-label">
+            <p-calendar [(ngModel)]="data" inputId="basic" dateFormat="dd/mm/yy"></p-calendar>
+            <label for="calendar">Data</label>
+        </span>
+    </div>
+
+    <div class="field lg:col-3 md:col-4 sm:col-12">
+        <span class="p-float-label">
+            <p-calendar [(ngModel)]="horaStart" [hourFormat]="24" [timeOnly]="true" inputId="timeonly"></p-calendar>
+            <label for="calendar">Hora Inicial</label>
+        </span>
+    </div>
+
+    <div class="field lg:col-3 md:col-4 sm:col-12">
+        <span class="p-float-label">
+            <p-calendar [(ngModel)]="horaEnd" [hourFormat]="24"  [timeOnly]="true" inputId="timeonly"></p-calendar>
+            <label for="calendar">Hora Final</label>
+        </span>
+    </div>
+
+    <div class="field lg:col-12 md:col-12 sm:col-12">
+        <span class="p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input pInputText type="text" placeholder="Username" />
+        </span>
+    </div>
+
+    <div class="field lg:col-4 md:col-4 sm:col-12">
+        <span class="p-input-icon-left">
+            <i class="pi pi-phone"></i>
+            <input pInputText type="text" placeholder="Telefone" [imask]="masks" [unmask]="true" />
+        </span>
+    </div>
+
+    <div class="col-12"></div>
+
+    <div class="field lg:col-2 md:col-4 sm:col-12">
+        <button pButton pRipple type="button" icon="pi pi-save" label="Salvar" class="p-button-success" (click)="salvarAgenda()"></button>
+    </div>
+    <div class="field lg:col-2 md:col-4 sm:col-12">
+        <button pButton pRipple type="button" icon="pi pi-search" label="Cancelar" class="mr-2 mb-2" (click)="closeAgenda()"></button>
+    </div>
+    <div class="field lg:col-3 md:col-4 sm:col-12">
+        <button pButton pRipple type="button" icon="pi pi-search" label="Remover Agendamento" class="p-button-danger mr-2 mb-2" (click)="removerAgenda()" *ngIf="config.data.id != null"></button>
+    </div>
+
+</div>
