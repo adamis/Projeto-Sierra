@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://192.168.1.13/espacosierra/',
+  apiUrl: 'http://192.168.0.13/espacosierra/',
 };
 
 /*
